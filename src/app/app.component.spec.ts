@@ -1,7 +1,7 @@
 import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { AppComponent } from "./app.component";
 import { RouterTestingModule } from "@angular/router/testing";
-import { HttpClient, HttpHandler } from "@angular/common/http";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { PropertyListComponent } from "./component/property-list/property-list.component";
 
@@ -11,11 +11,11 @@ describe("AppComponent", () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RouterTestingModule, FormsModule, ReactiveFormsModule],
+      imports: [RouterTestingModule, FormsModule, ReactiveFormsModule, HttpClientTestingModule],
       declarations: [AppComponent, PropertyListComponent],
-      providers: [HttpClient, HttpHandler],
     }).compileComponents();
   });
+
 
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
